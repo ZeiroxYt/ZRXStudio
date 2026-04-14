@@ -146,3 +146,19 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feed
 
 <h2 id="subs">Chargement...</h2>
 
+<h2 id="subs">🔴 0 abonnés</h2>
+
+<script>
+let count = 0;
+let target = 197; // 🔥 mets ton vrai nombre ici
+
+let interval = setInterval(() => {
+  if (count < target) {
+    count++;
+    document.getElementById("subs").innerHTML =
+      "🔴 " + count + " abonnés";
+  } else {
+    clearInterval(interval);
+  }
+}, 10);
+</script>
