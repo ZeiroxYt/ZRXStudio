@@ -3,102 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZeiroxYT</title>
+  <title>ZeiroxYT - Vidéos</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: white;
-      color: black;
+      background: #0f172a;
+      color: white;
       text-align: center;
     }
 
     header {
-      background: #f3f4f6;
       padding: 20px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #ef4444;
-    }
-
-    .logo {
-      width: 80px;
-      margin-top: 10px;
-    }
-
-    .fortnite {
-      width: 120px;
-      margin-top: 20px;
-    }
-
-    .container {
-      padding: 40px 20px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      background: white
-      color: black;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: 0.3s;
+      background: #111827;
+      font-size: 24px;
       font-weight: bold;
     }
 
-    .btn:hover {
-      background: #dc2626;
-      transform: scale(1.05);
-    }
-
-    .btn-discord {
-      background: #5865F2;
-    }
-
-    .btn-discord:hover {
-      background: #4752c4;
-    }
-
-    footer {
-      margin-top: 40px;
+    #videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
       padding: 20px;
-      background: #f3f4f6;
-      font-size: 0.9em;
+    }
+
+    .video {
+      background: #1f2937;
+      padding: 15px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .video:hover {
+      transform: scale(1.03);
+    }
+
+    .video a {
+      color: #00f0ff;
+      text-decoration: none;
+      font-size: 14px;
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>ZeiroxYT</h1>
-    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo">
-  </header>
+<header>
+  🎬 Mes dernières vidéos YouTube
+</header>
+<div style="margin:20px;">
+  
+  <a href="https://www.youtube.com/channel/UC7zZ0jj9KUx1Cy-zRBRNRZw" target="_blank"
+     style="display:inline-block;margin:10px;padding:10px 20px;background:red;color:white;text-decoration:none;border-radius:8px;">
+    🔔 YouTube
+  </a>
 
-  <div class="container">
-    <h2>Bienvenue sur ma chaîne !</h2>
-    <p>
-      Salut à tous 👋 !<br>
-      Bienvenue sur ma chaîne YouTube ZeiroxYT 🎮<br>
-      Je fais principalement des vidéos Fortnite 🔥<br>
-      Du fun, du gameplay et du divertissement !
-    </p>
+  <a href="LIEN_DE_TON_DISCORD" target="_blank"
+     style="display:inline-block;margin:10px;padding:10px 20px;background:#5865F2;color:white;text-decoration:none;border-radius:8px;">
+    💬 Discord
+  </a>
 
-    <img class="fortnite" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/FortniteLogo.svg" alt="Fortnite Logo">
+</div>
+<div id="videos"></div>
 
-    <br><br>
+<script>
+fetch("https://www.youtube.com/feeds/videos.xml?channel_id=UC7zZ0jj9KUx1Cy-zRBRNRZw")
+  .then(response => response.text())
+  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+  .then(data => {
+    const entries = data.querySelectorAll("entry");
+    let html = "";
 
-    <a class="btn" href="https://www.youtube.com/@Zeirox_officielYT/featured" target="_blank">🎥 YouTube</a>
-    <a class="btn btn-discord" href="https://discord.gg/vdCJWFw8" target="_blank">💬 Discord</a>
+    entries.forEach(entry => {
+      const title = entry.querySelector("title").textContent;
+      const link = entry.querySelector("link").getAttribute("href");
 
-  </div>
+      html += `
+        <div class="video">
+          <a href="${link}" target="_blank">
+            ${title}
+          </a>
+        </div>
+      `;
+    });
 
-  <footer>
-    © 2026 ZeiroxYT - Tous droits réservés
-  </footer>
+    document.getElementById("videos").innerHTML = html;
+  });
+</script>
 
 </body>
 </html>
