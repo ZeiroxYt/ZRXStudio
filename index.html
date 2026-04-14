@@ -144,14 +144,24 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feed
 </body>
 <h2 id="subs">Chargement...</h2>
 
+<h2 id="subs">Chargement...</h2>
+
 <script>
 fetch("https://api.socialcounts.org/youtube-live-subscriber-count/UC7zZ0jj9KUx1Cy-zRBRNRZw")
   .then(res => res.json())
   .then(data => {
-    document.getElementById("subs").innerHTML =
-      "🔴 " + data.est_sub + " abonnés";
+    console.log(data); // pour vérifier
+
+    if (data && data.est_sub) {
+      document.getElementById("subs").innerHTML =
+        "🔴 " + data.est_sub + " abonnés";
+    } else {
+      document.getElementById("subs").innerHTML =
+        "🔴 abonnés indisponibles";
+    }
   })
   .catch(() => {
-    document.getElementById("subs").innerHTML = "Abonnés indisponibles";
+    document.getElementById("subs").innerHTML =
+      "🔴 abonnés indisponibles";
   });
 </script>
