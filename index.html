@@ -90,8 +90,21 @@
     }
   </style>
 </head>
+<script>
+let target = 270; // 🔥 ton vrai nombre d'abonnés
+let count = 0;
 
-<body>
+let interval = setInterval(() => {
+  if (count < target) {
+    count++;
+    document.getElementById("subs").innerHTML =
+      "🔴 " + count + " abonnés";
+  } else {
+    clearInterval(interval);
+  }
+}, 10);
+</script>
+<body><h2 id="subs">🔴 Chargement...</h2>
 
 <header>
   <h1>ZeiroxYT</h1>
