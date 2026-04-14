@@ -122,20 +122,17 @@
 </footer>
 
 <script>
-fetch("https://www.youtube.com/feeds/videos.xml?channel_id=UC7zZ0jj9KUx1Cy-zRBRNRZw")
-  .then(response => response.text())
-  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UC7zZ0jj9KUx1Cy-zRBRNRZw")
+  .then(res => res.json())
   .then(data => {
-    const entries = data.querySelectorAll("entry");
     let html = "";
 
-    entries.forEach(entry => {
-      const title = entry.querySelector("title").textContent;
-      const link = entry.querySelector("link").getAttribute("href");
-
+    data.items.forEach(item => {
       html += `
         <div class="video">
-          <a href="${link}" target="_blank">${title}</a>
+          <a href="${item.link}" target="_blank">
+            ${item.title}
+          </a>
         </div>
       `;
     });
