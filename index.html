@@ -1,214 +1,151 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZeiroxYT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZeiroxYT - Official</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #111;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  background: #0a0a0a;
+}
 
-    header {
-      background: white;
-      padding: 20px;
-      border-bottom: 2px solid #eee;
-    }
+/* HEADER */
+header {
+  padding: 30px;
+  background: linear-gradient(90deg, #ff0000, #1f1f1f);
+  box-shadow: 0 0 20px red;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #ef4444;
-    }
+h1 {
+  margin: 0;
+  font-size: 2.8em;
+}
 
-    .logo {
-      width: 80px;
-      margin-top: 10px;
-    }
+#subs {
+  font-size: 22px;
+  margin-top: 10px;
+}
 
-    .container {
-      padding: 40px 20px;
-    }
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      background: #ef4444;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: 0.3s;
-      font-weight: bold;
-    }
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px white;
+}
 
-    .btn:hover {
-      background: #dc2626;
-      transform: scale(1.05);
-    }
+.yt { background: red; color: white; }
+.dc { background: #5865F2; color: white; }
 
-    .btn-discord {
-      background: #5865F2;
-    }
+/* SECTIONS */
+.section {
+  margin-top: 40px;
+}
 
-    .btn-discord:hover {
-      background: #4752c4;
-    }
+/* VIDEOS */
+#videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
 
-    #videos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 20px;
-      margin-top: 30px;
-    }
+.video {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 15px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(255,0,0,0.2);
+}
 
-    .video {
-      background: white;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+.video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px red;
+}
 
-    .video a {
-      color: #ef4444;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.video a {
+  color: #00f0ff;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      background: white;
-      border-top: 2px solid #eee;
-      font-size: 0.9em;
-    }
-  </style>
+/* FOOTER */
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  opacity: 0.7;
+}
+</style>
 </head>
-<script>
-let target = 272; // 🔥 ton vrai nombre d'abonnés
-let count = 0;
 
-let interval = setInterval(() => {
-  if (count < target) {
-    count++;
-    document.getElementById("subs").innerHTML =
-      "🔴 " + count + " abonnés";
-  } else {
-    clearInterval(interval);
-  }
-}, 10);
-</script>
-<body><h2 id="subs">🔴 Chargement...</h2>
+<body>
 
 <header>
-  <h1>ZeiroxYT</h1>
-  <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg">
+  <h1>🎮 ZeiroxYT</h1>
+  <div id="subs">🔴 Chargement...</div>
+
+  <a class="btn yt" href="https://www.youtube.com/channel/UC7zZ0jj9KUx1Cy-zRBRNRZw" target="_blank">🔔 YouTube</a>
+  <a class="btn dc" href="https://discord.gg/vdCJWFw8" target="_blank">💬 Discord</a>
 </header>
 
-<div class="container">
+<div class="section">
+  <h2>🔥 À propos</h2>
+  <p>Créateur Fortnite 🎮 | Gameplay, fun & clips 🔥</p>
+</div>
 
-  <h2>Bienvenue sur ma chaîne !</h2>
-
-  <p>
-    Salut à tous 👋 !<br>
-    Bienvenue sur ma chaîne YouTube  🎮<br>
-    Je fais principalement des vidéos Fortnite 🔥
-  </p>
-
-  <!-- BOUTONS -->
-  <a class="btn" href="https://www.youtube.com/@Zeirox_officielYT/featured" target="_blank">🎥 YouTube</a>
-  <a class="btn btn-discord" href="https://discord.gg/vdCJWFw8" target="_blank">🧑‍💻 Discord</a>
-
-  <h2>🎬 Mes dernières vidéos</h2>
+<div class="section">
+  <h2>🎬 Dernières vidéos</h2>
   <div id="videos"></div>
-
 </div>
 
 <footer>
-  © 2026 ZeiroxYT - Tous droits réservés
+  © 2026 ZeiroxYT - Official Website
 </footer>
 
 <script>
-fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UC7zZ0jj9KUx1Cy-zRBRNRZw")
-  .then(res => res.json())
-  .then(data => {
-    let html = "";
-
-    data.items.forEach(item => {
-      html += `
-        <div class="video">
-          <a href="${item.link}" target="_blank">
-            ${item.title}
-          </a>
-        </div>
-      `;
-    });
-
-    document.getElementById("videos").innerHTML = html;
-  });
-</script>
-
-</body>
-
-
-
-
-
-<script>
+let target = 270;
 let count = 0;
-let target = 270; // 🔥 mets ton vrai nombre ici
 
 let interval = setInterval(() => {
   if (count < target) {
     count++;
-    document.getElementById("subs").innerHTML =
-      "🔴 " + count + " abonnés";
+    document.getElementById("subs").innerHTML = "🔴 " + count + " abonnés";
   } else {
     clearInterval(interval);
   }
 }, 10);
 </script>
-<h2>🎮 Fortnite</h2>
-<p>
-POUR M'AJOUTER SUR FORTNITE :<br>
-👉 ZRX_ZeiroxYT
-</p><p>
-🔥 N’oublie pas de t’abonner avec la cloche pour ne rien rater !
-</p><h2>👤 À propos de moi</h2>
-<p>
-Je suis ZRX_ZeiroxYT, créateur de contenu Fortnite 🎮<br>
-Objectif : divertir et progresser avec vous 🔥
-</p><p>🎯 Objectif : 1K abonnés !</p><iframe width="300" height="170"
-src="https://www.youtube.com/embed/https:9mENJ9mrIXY">
-</iframe>
-<h2>🏆 Mes stats</h2>
-<p>
-🎯 Meilleur top 1 : XX<br>
-🔥 Kill record : 24 (pas en vidéo)<br>
-🎮 Niveau Fortnite : 432
-</p><h2>🎁 Giveaway</h2>
-<p>
-Bientôt un concours Fortnite 👀<br>
-Reste connecté !
-</p><h2>📅 Planning</h2>
-<p>
-📌 Vidéo tous les mercredis et samedis !
-</p><h2>🚀 Rejoins la communauté</h2>
-<p>
-Discord + YouTube = la team 🔥
-<p><h2>💡 Astuces Fortnite</h2>
-<p>
-✔ Toujours avoir un bon positionnement<br>
-✔ Build rapidement<br>
-✔ Ne pas paniquer en fight
-</p><p>Objectif : 1K abonnés</p>
-<progress value="273" max="1K"></progres>
 
+<script>
+fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UC7zZ0jj9KUx1Cy-zRBRNRZw")
+.then(res => res.json())
+.then(data => {
+  let html = "";
 
+  data.items.forEach(item => {
+    html += `
+      <div class="video">
+        <a href="${item.link}" target="_blank">🎬 ${item.title}</a>
+      </div>
+    `;
+  });
 
+  document.getElementById("videos").innerHTML = html;
+});
+</script>
+
+</body>
+</html>
