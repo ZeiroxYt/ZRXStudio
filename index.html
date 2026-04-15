@@ -148,8 +148,181 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feed
 </script>
 
 </body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #message {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .btn-youtube {
+            background-color: #ff0000;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .btn-youtube:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="message">
+        Bonjour, heureux de te voir !<br>
+        N'oublie pas de t'abonner à ma chaîne avec la cloche de notification,<br>
+        comme ça tu ne louperas aucune vidéo !!!<br><br>
+        Il suffit de cliquer sur le bouton YouTube 
+    </div>
+<p id="texte"></p>
+
 <script>
-window.onload = function() {
-    alert("Bonjour, heureux de te voir ! N'oublie pas de t'abonner à ma chaîne avec la cloche de notification, comme ça tu ne louperas aucune vidéo !!! Il suffit de cliquer sur le bouton YouTube");
+let message = "Bonjour, heureux de te voir ! Abonne-toi pour ne rien rater 🔔";
+let i = 0;
+
+function ecrire() {
+    if (i < message.length) {
+        document.getElementById("texte").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(ecrire, 50);
+    }
+}
+
+ecrire();
+</script><button onclick="toggleMode()">Mode sombre</button>
+
+<script>
+function toggleMode() {
+    document.body.classList.toggle("dark");
 }
 </script>
+
+<style>
+.dark {
+    background-color: black;
+    color: white;
+}
+</style><div id="popup" style="display:none; position:fixed; top:30%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border-radius:10px;">
+    👋 Bienvenue ! Pense à t'abonner 🔔
+    <br><br>
+    <button onclick="document.getElementById('popup').style.display='none'">Fermer</button>
+</div>
+
+<script>
+window.onload = function() {
+    document.getElementById("popup").style.display = "block";
+}
+</script><button onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+⬆️ Haut
+</button><p id="heureMsg"></p>
+
+<script>
+let heure = new Date().getHours();
+let msg = "";
+
+if (heure < 12) msg = "☀️ Bonjour !";
+else if (heure < 18) msg = "🌤️ Bon après-midi !";
+else msg = "🌙 Bonsoir !";
+
+document.getElementById("heureMsg").innerText = msg;
+</script><div id="barre"></div>
+
+<style>
+#barre {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: red;
+    width: 0%;
+}
+</style>
+
+<script>
+window.onscroll = function() {
+    let scroll = document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let percent = (scroll / height) * 100;
+    document.getElementById("barre").style.width = percent + "%";
+}
+</script><button onclick="this.innerText='Trop tard 😆'">
+Clique ici !
+</button><style>
+.neon {
+    color: #fff;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px red,
+        0 0 20px red;
+}
+</style>
+
+<h1 class="neon">ABONNE-TOI 🔥</h1><button id="btn">Clique-moi 😈</button>
+
+<script>
+let btn = document.getElementById("btn");
+
+btn.onmouseover = () => {
+    btn.style.position = "absolute";
+    btn.style.top = Math.random() * 300 + "px";
+    btn.style.left = Math.random() * 300 + "px";
+}
+</script><p id="date"></p>
+
+<script>
+document.getElementById("date").innerText =
+new Date().toLocaleDateString();
+</script><p>Objectif : 1000 abonnés</p>
+<div style="background:#ccc; width:300px;">
+    <div id="progress" style="background:red; width:0%; color:white;">0%</div>
+</div>
+
+<script>
+let subs = 280<button onclick="playSound()">Clique avec son 🔊</button>
+
+<audio id="son">
+  <source src="click.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playSound() {
+    document.getElementById("son").play();<button onclick="document.getElementById('secret').style.display='block'">
+Découvre un secret 🤫
+</button>
+
+<p id="secret" style="display:none;">
+Merci d'être là ❤️
+</p><button onclick="share()">Partager 📤</button>
+
+<script>
+function share() {
+    navigator.clipboard.writeText(window.location.href);
+    alert("Lien copié !");
+}
+</script><style>
+.rainbow {
+    animation: rainbow 3s infinite;
+}
+
+@keyframes rainbow {
+    0% {color:red;}
+    25% {color:yellow;}
+    50% {color:green;}
+    75% {color:blue;}
+    100% {color:red;}
+}
+</style>
+
+<h2 class="rainbow">Bienvenue !</h2><button onclick="alert('🎁 Surprise ! Merci !')">
+Ouvre ton cadeau 🎁
+</button>
