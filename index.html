@@ -164,8 +164,8 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feed
             margin-bottom: 20px;
         }
         .btn-youtube {
-            background-color: #ff0000;
-            color: white;
+            background-color: #white;
+            color: black;
             padding: 15px 25px;
             text-decoration: none;
             font-size: 18px;
@@ -209,8 +209,8 @@ function toggleMode() {
 
 <style>
 .dark {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
 }
 </style><div id="popup" style="display:none; position:fixed; top:30%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border-radius:10px;">
     👋 Bienvenue ! Pense à t'abonner 🔔
@@ -224,19 +224,6 @@ window.onload = function() {
 }
 </script><button onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
 ⬆️ Haut
-</button><p id="heureMsg"></p>
-
-<script>
-let heure = new Date().getHours();
-let msg = "";
-
-if (heure < 12) msg = "☀️ Bonjour !";
-else if (heure < 18) msg = "🌤️ Bon après-midi !";
-else msg = "🌙 Bonsoir !";
-
-document.getElementById("heureMsg").innerText = msg;
-</script><div id="barre"></div>
-
 <style>
 #barre {
     position: fixed;
@@ -267,7 +254,7 @@ Clique ici !
 }
 </style>
 
-<h1 class="neon">ABONNE-TOI 🔥</h1><button id="btn">Clique-moi 😈</button>
+<h1 class="neon">ABONNE-TOI 🔥😈</h1><button id="btn">Clique-moi 😈</button>
 
 <script>
 let btn = document.getElementById("btn");
@@ -301,20 +288,14 @@ Découvre un secret 🤫
 </button>
 
 <p id="secret" style="display:none;">
-Merci d'être là ❤️
-</p><button onclick="share()">Partager 📤</button>
-
-<script>
-function share() {
-    navigator.clipboard.writeText(window.location.href);
-    alert("Lien copié !");
+Merci d'être là 
 }
 </script><style>
 .rainbow {
     animation: rainbow 3s infinite;
 }
 }
-let abonnés = 276;
+let abonnés = 277;
 let objectif = 1000;
 
 let pourcentage = (abonnés / objectif) * 100;
@@ -345,8 +326,8 @@ Ouvre ton cadeau 🎁
     }
 
     .dark {
-      background: #121212;
-      color: white;
+      background:white;
+      color: black;
     }
 
     .btn {
