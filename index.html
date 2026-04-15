@@ -380,27 +380,37 @@ function toggleTheme() {
 setInterval(() => {
   document.getElementById("clock").innerText = new Date().toLocaleTimeString();
 }, 1000);
-</script><nav>
-  <a href="#">Accueil</a>
-  <a href="#">Projets</a>
-  <a href="#">Contact</a>
-</nav>
+</script> <button onclick="fondBlanc()">Fond blanc</button>
+
+<script>
+function fondBlanc() {
+  document.body.style.backgroundColor = "white";
+  document.body.style.color = "black";
+}
+</script><button id="miniBtn" onclick="afficherMessage()">+</button>
+
+<p id="message" style="display:none;">
+  Bravo si tu veux me contacter par mail voilà mon adresse mail : noe.feitosa1@gmail.com
+</p>
 
 <style>
-nav {
-  display: flex;
-  gap: 20px;
-  padding: 15px;
-  background: #111;
+#miniBtn{
+  width:25px;
+  height:25px;
+  font-size:12px;
+  border:none;
+  border-radius:50%;
+  cursor:pointer;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-family: Arial;
+#message{
+  margin-top:10px;
+  font-size:14px;
 }
+</style>
 
-nav a:hover {
-  color: #4caf50;
+<script>
+function afficherMessage() {
+  document.getElementById("message").style.display = "block";
 }
-</style><input type="search" placeholder="Rechercher...">
+</script>
