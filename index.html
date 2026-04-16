@@ -3,90 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZRX_Studio - Official</title>
+<title>ZeiroxYT GOD MODE</title>
 
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   color: white;
   text-align: center;
-  background: #0a0a0a;
+  background: linear-gradient(-45deg,#000,#111,#ff0000,#000);
+  background-size: 400% 400%;
+  animation: bg 12s infinite;
 }
 
-/* HEADER */
+@keyframes bg {
+  0%{background-position:0%}
+  50%{background-position:100%}
+  100%{background-position:0%}
+}
+
 header {
   padding: 30px;
-  background: linear-gradient(90deg, #ff0000, #1f1f1f);
-  box-shadow: 0 0 20px red;
+  background: rgba(0,0,0,0.7);
+  box-shadow: 0 0 25px red;
 }
 
 h1 {
-  margin: 0;
-  font-size: 2.8em;
+  font-size: 3em;
+  color: #ff3b3b;
+}
+
+#typing {
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 #subs {
   font-size: 22px;
-  margin-top: 10px;
+  margin: 10px;
 }
 
-/* BUTTONS */
+/* BOUTONS */
 .btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 25px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  display:inline-block;
+  margin:10px;
+  padding:12px 25px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
 }
 
 .btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px white;
+  transform:scale(1.1);
+  box-shadow:0 0 20px white;
 }
 
-.yt { background: red; color: white; }
-.dc { background: #5865F2; color: white; }
+.yt{background:red;}
+.dc{background:#5865F2;}
 
-/* SECTIONS */
+/* SECTION */
 .section {
-  margin-top: 40px;
+  margin-top:40px;
 }
 
-/* VIDEOS */
+/* FEATURE VIDEO */
+.featured iframe {
+  border-radius:15px;
+  box-shadow:0 0 20px red;
+}
+
+/* PROGRESS */
+progress {
+  width:250px;
+  height:10px;
+}
+
+/* VIDEOS GRID */
 #videos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  padding: 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
 }
 
 .video {
-  background: #1a1a1a;
-  padding: 15px;
-  border-radius: 15px;
-  transition: 0.3s;
-  box-shadow: 0 0 10px rgba(255,0,0,0.2);
+  background:rgba(0,0,0,0.7);
+  border-radius:15px;
+  overflow:hidden;
+  transition:0.3s;
 }
 
 .video:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px red;
+  transform:scale(1.05);
+  box-shadow:0 0 25px red;
+}
+
+.video img {
+  width:100%;
 }
 
 .video a {
-  color: #00f0ff;
-  text-decoration: none;
-  font-weight: bold;
+  display:block;
+  padding:10px;
+  color:#00f0ff;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-/* FOOTER */
 footer {
-  margin-top: 40px;
-  padding: 20px;
-  opacity: 0.7;
+  margin-top:40px;
+  padding:20px;
+  opacity:0.7;
 }
 </style>
 </head>
@@ -94,287 +122,77 @@ footer {
 <body>
 
 <header>
-  <h1>🎮 ZRX_ZeiroxYT</h1>
-  <div id="subs">🔴 Chargement...</div>
+<h1>🎮 ZRX_ZeiroxYT</h1>
+<div id="typing"></div>
+<div id="subs">🔴 Chargement...</div>
 
-  <a class="btn yt" href="https://www.youtube.com/channel/UC7zZ0jj9KUx1Cy-zRBRNRZw" target="_blank">🔔 YouTube</a>
-  <a class="btn dc" href="https://discord.gg/vdCJWFw8" target="_blank">💬 Discord</a>
+<a class="btn yt" href="https://www.youtube.com/channel/UC7zZ0jj9KUx1Cy-zRBRNRZw" target="_blank">🔔 YouTube</a>
+<a class="btn dc" href="https://discord.gg/vdCJWFw8" target="_blank">💬 Discord</a>
 </header>
 
-<div class="section">
-  <h2>🔥 À propos</h2>
-  <p>Créateur Fortnite 🎮 | Gameplay, fun & clips 🔥</p>
+<!-- FEATURE VIDEO -->
+<div class="section featured">
+<h2>🔥 Vidéo à la une</h2>
+<iframe width="300" height="170"
+src="https://www.youtube.com/embed/ID_VIDEO"
+allowfullscreen></iframe>
 </div>
 
+<!-- OBJECTIF -->
 <div class="section">
-  <h2>🎬 Dernières vidéos</h2>
-  <div id="videos"></div>
+<h2>🎯 Objectif 500 abonnés</h2>
+<progress value="270" max="500"></progress>
+</div>
+
+<!-- VIDEOS -->
+<div class="section">
+<h2>🎬 Dernières vidéos</h2>
+<div id="videos"></div>
 </div>
 
 <footer>
-  © 2026 ZeiroxYT - Official Website
+© 2026 ZeiroxYT GOD MODE
 </footer>
 
 <script>
-let target = 276;
-let count = 0;
+// TEXTE ANIMÉ
+let txt="Bienvenue sur mon site officiel 🔥";
+let i=0;
+function type(){
+ if(i<txt.length){
+  document.getElementById("typing").innerHTML+=txt.charAt(i);
+  i++;
+  setTimeout(type,40);
+ }
+}
+type();
 
-let interval = setInterval(() => {
-  if (count < target) {
-    count++;
-    document.getElementById("subs").innerHTML = "🔴 " + count + " abonnés";
-  } else {
-    clearInterval(interval);
-  }
-}, 10);
-</script>
+// COMPTEUR
+let count=0;
+let target=289;
 
-<script>
+let inter=setInterval(()=>{
+ if(count<target){
+  count++;
+  document.getElementById("subs").innerHTML="🔴 "+count+" abonnés";
+ } else clearInterval(inter);
+},10);
+
+// VIDEOS
 fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UC7zZ0jj9KUx1Cy-zRBRNRZw")
-.then(res => res.json())
-.then(data => {
-  let html = "";
-
-  data.items.forEach(item => {
-    html += `
-      <div class="video">
-        <a href="${item.link}" target="_blank">🎬 ${item.title}</a>
-      </div>
-    `;
-  });
-
-  document.getElementById("videos").innerHTML = html;
+.then(res=>res.json())
+.then(data=>{
+ let html="";
+ data.items.forEach(v=>{
+  html+=`
+  <div class="video">
+    <img src="${v.thumbnail}">
+    <a href="${v.link}" target="_blank">${v.title}</a>
+  </div>`;
+ });
+ document.getElementById("videos").innerHTML=html;
 });
 </script>
 
 </body>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Bienvenue</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        #message {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-        .btn-youtube {
-            background-color: #white;
-            color: black;
-            padding: 15px 25px;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
-        }
-        .btn-youtube:hover {
-            background-color: #cc0000;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="message">
-        Bonjour, heureux de te voir !<br>
-        N'oublie pas de t'abonner à ma chaîne avec la cloche de notification,<br>
-        comme ça tu ne louperas aucune vidéo !!!<br><br>
-        Il suffit de cliquer sur le bouton YouTube 
-    </div>
-<p id="texte"></p>
-
-<script>
-let message = "Bonjour, heureux de te voir ! Abonne-toi pour ne rien rater 🔔";
-let i = 0;
-
-function ecrire() {
-    if (i < message.length) {
-        document.getElementById("texte").innerHTML += message.charAt(i);
-        i++;
-        setTimeout(ecrire, 50);
-    }
-}
-
-ecrire();
-</script><button onclick="toggleMode()">Mode sombre</button>
-
-<script>
-function toggleMode() {
-    document.body.classList.toggle("dark");
-}
-</script>
-
-<style>
-.dark {
-    background-color: white;
-    color: black;
-}
-</style><div id="popup" style="display:none; position:fixed; top:30%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border-radius:10px;">
-    👋 Bienvenue ! Pense à t'abonner 🔔
-    <br><br>
-    <button onclick="document.getElementById('popup').style.display='none'">Fermer</button>
-</div>
-
-<script>
-window.onload = function() {
-    document.getElementById("popup").style.display = "block";
-}
-</script><button onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-⬆️ Haut
-<style>
-#barre {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 5px;
-    background: red;
-    width: 0%;
-}
-</style>
-
-<script>
-window.onscroll = function() {
-    let scroll = document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let percent = (scroll / height) * 100;
-    document.getElementById("barre").style.width = percent + "%";
-}
-</script><button onclick="this.innerText='Trop tard 😆'">
-Clique ici !
-</button><style>
-.neon {
-    color: #fff;
-    text-shadow:
-        0 0 5px #fff,
-        0 0 10px red,
-        0 0 20px red;
-}
-</style>
-
-<h1 class="neon">ABONNE-TOI 🔥😈</h1><button id="btn">Clique-moi 😈</button>
-
-<script>
-let btn = document.getElementById("btn");
-
-btn.onmouseover = () => {
-    btn.style.position = "absolute";
-    btn.style.top = Math.random() * 300 + "px";
-    btn.style.left = Math.random() * 300 + "px";
-}
-</script><p id="date"></p>
-
-<script>
-document.getElementById("date").innerText =
-new Date().toLocaleDateString();
-</script><p>Objectif : 1000 abonnés</p>
-<div style="background:#ccc; width:300px;">
-    <div id="progress" style="background:red; width:0%; color:white;">0%</div>
-</div>
-
-<script>
-let subs = 280<button onclick="playSound()">Clique avec son 🔊</button>
-
-<audio id="son">
-  <source src="click.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-function playSound() {
-    document.getElementById("son").play();<button onclick="document.getElementById('secret').style.display='block'">
-Découvre un secret 🤫
-</button>
-
-<p id="secret" style="display:none;">
-Merci d'être là 
-}
-</script><style>
-.rainbow {
-    animation: rainbow 3s infinite;
-}
-}
-let abonnés = 277;
-let objectif = 1000;
-
-let pourcentage = (abonnés / objectif) * 100;
-
-console.log(`Tu es à ${pourcentage.toFixed(1)}% de ton objectif !`);
-
-<h2 class="rainbow">Bienvenue !</h2><button onclick="alert('🎁 Surprise ! Merci !')">
-Ouvre ton cadeau 🎁
-</button>
-<div style="width:300px; border:1px solid #ccc; border-radius:10px; overflow:hidden;">
-  <div style="width:27.6%; background:#4caf50; color:white; text-align:center;">
-    27.6%
-  </div>
-</div>
-<p>276 / 1000 abonnés</p><h1>Bienvenue sur mon site</h1>
-<p>Un projet en développement</p><!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Mode clair/sombre</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      transition: 0.3s;
-      background: white;
-      color: black;
-    }
-
-    .dark {
-      background:white;
-      color: black;
-    }
-
-    .btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px 15px;
-      cursor: pointer;
-      border: none;
-      border-radius: 8px;
-    }
-  </style>
-</head>
-<body>
-
-<button class="btn" onclick="toggleTheme()">Mode sombre / clair</button>
-
-<h1>Mon site</h1>
-<p>Voici un exemple de mode clair et sombre.</p>
-
-<script>
-function toggleTheme() {
-  document.body.classList.toggle("dark");
-}
-</script>
-
-</body>
-<h2 id="clock"></h2>
-
-<script>
-setInterval(() => {
-  document.getElementById("clock").innerText = new Date().toLocaleTimeString();
-}, 1000);
-</script> <button onclick="fondBlanc()">Fond blanc</button>
-
-<script>
-function fondBlanc() {
-  document.body.style.backgroundColor = "white";
-  document.body.style.color = "black";
-}
-</script><p style="font-size:8px;">
-  contact : noe.feitosa1@gmail.com
-</p><p style="font-size:10px;">
-  Envoi ce code 1321 dans la vidéo ci-dessous.
-</p>
-
-<a href="https://youtube.com/shorts/1cRObjXaGqE?si=MMPu38FldwtAoST1" target="_blank" style="font-size:10px;">
-  Voir la vidéo
-</a>
-
+</html>
